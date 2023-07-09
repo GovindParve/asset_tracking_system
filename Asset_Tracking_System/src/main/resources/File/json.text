@@ -1,0 +1,10 @@
+[
+    { "gSrNo": "G125","gMacId": "8c:aa:b5:8c:56:18","tMacId": "c3:94:11:56:67:ea","bSN":"05e30a78","batStat": "90"},
+    { "gSrNo": "G125","gMacId": "8c:aa:b5:8c:56:18","tMacId": "ea:74:a5:78:a8:7a","bSN":"0000000c","batStat": "90"},
+    { "gSrNo": "G125","gMacId": "8c:aa:b5:8c:56:18","tMacId": "dc:b2:c3:4c:c2:d6","bSN":"00000007","batStat": "90"},
+    { "gSrNo": "G125","gMacId": "8c:aa:b5:8c:56:18","tMacId": "c8:b5:89:83:d9:01","bSN":"00000005","batStat": "90"},
+    { "gSrNo": "G125","gMacId": "8c:aa:b5:8c:56:18","tMacId": "f8:97:39:93:5f:ba","bSN":"00000009","batStat": "90"},
+    { "gSrNo": "G125","gMacId": "8c:aa:b5:8c:56:18","tMacId": "cb:da:4c:3e:3f:c2","bSN":"00000002","batStat": "90"},
+    { "gSrNo": "G125","gMacId": "8c:aa:b5:8c:56:18","tMacId": "d1:75:3d:ba:3a:25","bSN":"e9d24924","batStat": "90"}
+    
+]

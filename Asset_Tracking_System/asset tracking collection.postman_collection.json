@@ -1,0 +1,2199 @@
+{
+	"info": {
+		"_postman_id": "40255963-a3d1-43c2-98a7-d70ac1b9ba8b",
+		"name": "asset tracking collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "New Folder",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "localhost:8082/users/signin?username=sapna&password=sapna",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/users/signin?username=superadmin&password=pratik@123",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"users",
+						"signin"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "superadmin"
+						},
+						{
+							"key": "password",
+							"value": "pratik@123"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8082/asset/Singletag/get-tracking-list-for-filter-tagnamewise?tagName=beta tag 2&fkUserId=3&role=user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXBlcmFkbWluIiwiYXVkIjoiUmVmcmVzaCIsImlhdCI6MTY4MTgzNzQ2MywiZXhwIjoxNjgxOTIzODYzfQ.RNugPFHGwrg5LUDAaqQZCMvZSHBm_3eExEmYxbv-cIc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8082/asset/Singletag/get-tracking-list-for-filter-tagnamewise?tagName=EMB4-1&fkUserId=1&role=super-admin",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"asset",
+						"Singletag",
+						"get-tracking-list-for-filter-tagnamewise"
+					],
+					"query": [
+						{
+							"key": "tagName",
+							"value": "EMB4-1"
+						},
+						{
+							"key": "fkUserId",
+							"value": "1"
+						},
+						{
+							"key": "role",
+							"value": "super-admin"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8082/asset/tracking/get_tracking_details_of_tag",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXBlcmFkbWluIiwiYXVkIjoiUmVmcmVzaCIsImlhdCI6MTY4MTgzNzQ2MywiZXhwIjoxNjgxOTIzODYzfQ.RNugPFHGwrg5LUDAaqQZCMvZSHBm_3eExEmYxbv-cIc",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"tagCategoty\":\"BLE\",\r\n\"assetTagName\":\"EMB-1\",\r\n\"assetGatewayName\":\"EMBEL_Gateway_V1\",\r\n\"assetGatewayMac_Id\" : \"c4:4f:33:15:c9:21\",\r\n\"assetTagMac_Id\" : \"e6:76:52:90:4a:e1\",\r\n\"barcodeSerialNumber\":\"20001d24\",\r\n\"tagEntryLocation\":\"\",\r\n\"tagExistLocation\":\"\",\r\n\"latitude\":\"\",\r\n\"longitude\":\"\",\r\n\"date\":\"\",\r\n\"entryTime\":\"\",\r\n\"existTime\":\"\",\r\n\"dispatchTime\":\"\",\r\n\"battryPercentage\" : 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8082/asset/tracking/get_tracking_details_of_tag"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8082/asset/tag/get-tracking-list-for-filter-tagnamewise?tagName=beta tag 1&fkUserId=1&role=super-admin",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXBlcmFkbWluIiwiYXVkIjoiUmVmcmVzaCIsImlhdCI6MTY4MTgzNzQ2MywiZXhwIjoxNjgxOTIzODYzfQ.RNugPFHGwrg5LUDAaqQZCMvZSHBm_3eExEmYxbv-cIc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8082/asset/tag/get-tracking-list-for-filter-tagnamewise?tagName=EMB-1&fkUserId=1&role=super-admin",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"asset",
+						"tag",
+						"get-tracking-list-for-filter-tagnamewise"
+					],
+					"query": [
+						{
+							"key": "tagName",
+							"value": "EMB-1"
+						},
+						{
+							"key": "fkUserId",
+							"value": "1"
+						},
+						{
+							"key": "role",
+							"value": "super-admin"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8082/tracking/gateway/get-gateway-list-for-dropdown?fkUserId=1&role=user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXBlcmFkbWluIiwiYXVkIjoiUmVmcmVzaCIsImlhdCI6MTY4MTgzNzQ2MywiZXhwIjoxNjgxOTIzODYzfQ.RNugPFHGwrg5LUDAaqQZCMvZSHBm_3eExEmYxbv-cIc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8082/tracking/gateway/get-gateway-list-for-dropdown?fkUserId=1&role=user",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"tracking",
+						"gateway",
+						"get-gateway-list-for-dropdown"
+					],
+					"query": [
+						{
+							"key": "fkUserId",
+							"value": "1"
+						},
+						{
+							"key": "role",
+							"value": "user"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8082/tracking/get-gateway-wise-tag-count?gatewayName=gateway2&fkUserId=3&role=user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXBlcmFkbWluIiwiYXVkIjoiUmVmcmVzaCIsImlhdCI6MTY4MTgzNzQ2MywiZXhwIjoxNjgxOTIzODYzfQ.RNugPFHGwrg5LUDAaqQZCMvZSHBm_3eExEmYxbv-cIc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8082/tracking/get-gateway-wise-tag-count?fkUserId=708&role=user",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"tracking",
+						"get-gateway-wise-tag-count"
+					],
+					"query": [
+						{
+							"key": "gatewayName",
+							"value": "gateway2",
+							"disabled": true
+						},
+						{
+							"key": "fkUserId",
+							"value": "708"
+						},
+						{
+							"key": "role",
+							"value": "user"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8082/tracking/get-tag-count?fkUserId=1&role=super-admin",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXBlcmFkbWluIiwiYXVkIjoiUmVmcmVzaCIsImlhdCI6MTY4MTgzNzQ2MywiZXhwIjoxNjgxOTIzODYzfQ.RNugPFHGwrg5LUDAaqQZCMvZSHBm_3eExEmYxbv-cIc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8082/asset/tracking/view-all-tracking-data-with-time-duration-and-gateway-report-view?gatewayName=Embel_Gateway_v2&duration=lastMonth&fkUserId=1&role=super-admin",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"asset",
+						"tracking",
+						"view-all-tracking-data-with-time-duration-and-gateway-report-view"
+					],
+					"query": [
+						{
+							"key": "gatewayName",
+							"value": "Embel_Gateway_v2"
+						},
+						{
+							"key": "tagName",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "duration",
+							"value": "lastMonth"
+						},
+						{
+							"key": "fkUserId",
+							"value": "1"
+						},
+						{
+							"key": "role",
+							"value": "super-admin"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8082/gateway/update-gateway",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYXBuYSIsImF1dGgiOltdLCJpYXQiOjE2MzQ1Mzc0ODksImV4cCI6MTYzNDU0MTA4OX0.C0jXe4W-EYCtIrqXxby3WNFRueGhB8XRyXxRPBmwAPE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"gatewayId\": 1,\r\n        \"gatewayName\": \"gateway2\",\r\n        \"gatewayUniqueCodeMacId\": \"5645647\",\r\n        \"gatewayBarcodeOrSerialNumber\": \"e5e6546464\",\r\n        \"gatewayLocation\": \"Room\",\r\n        \"assetTagCategory\": \"BLE\",\r\n        \"user\": \"Sapna Bellale\",\r\n        \"admin\": \"Sarang Bhongade\",\r\n        \"fkUserId\": 1,\r\n        \"fkAdminId\": 2,\r\n        \"wakeupTime\": \"01:05:00\",\r\n        \"timeZone\": \"Asia/Kolkata\",\r\n        \"dateTime\": \"2021-08-18T18:30:00.000+00:00\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8082/gateway/update-gateway"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8082/gateway/get-gateway-for-edit/4",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYXBuYSIsImF1dGgiOltdLCJpYXQiOjE2MzQ1Mzc0ODksImV4cCI6MTYzNDU0MTA4OX0.C0jXe4W-EYCtIrqXxby3WNFRueGhB8XRyXxRPBmwAPE",
+						"type": "text"
+					}
+				],
+				"url": "localhost:8082/gateway/get-gateway-for-edit/4"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8082/asset/tag/get-tracking_list_on_userwise?fkUserId=1&role=super-admin",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXBlcmFkbWluIiwiYXV0aCI6W10sImlhdCI6MTY0NDI5OTk0MCwiZXhwIjoxNjQ0MzAzNTQwfQ.XGFtUL0zo2K4PaKadq7RRof3DcRS50zvbpwoQ3TdueY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8082/asset/tag/get-tracking_list_on_userwise?fkUserId=1&role=super-admin",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"asset",
+						"tag",
+						"get-tracking_list_on_userwise"
+					],
+					"query": [
+						{
+							"key": "fkUserId",
+							"value": "1"
+						},
+						{
+							"key": "role",
+							"value": "super-admin"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8082/gateway-location/get-gateway-location-list-for-dropdown?fkUserId=1&role=super-admin",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer    eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXBlcmFkbWluIiwiYXV0aCI6W10sImlhdCI6MTYzNTE1OTIwMCwiZXhwIjoxNjM1MTYyODAwfQ.V1hDtHOAntYo5ZZharSNGGa-XU3QBjvV1OTT-PzyG8c",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8082/gateway-location/get-gateway-location-list-for-dropdown?fkUserId=1&role=super-admin",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"gateway-location",
+						"get-gateway-location-list-for-dropdown"
+					],
+					"query": [
+						{
+							"key": "fkUserId",
+							"value": "1"
+						},
+						{
+							"key": "role",
+							"value": "super-admin"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8082/tracking/get-aged-and-new-tag-count-for-graph?fkUserId=1&role=super-admin",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXBlcmFkbWluIiwiYXV0aCI6W10sImlhdCI6MTYzNTQxODY2MCwiZXhwIjoxNjM1NDIyMjYwfQ.0frylqu9hBORM7mkKS1gJZ_zDNmMHCw9rnnZzP3QSY4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8082/tracking/get-aged-and-new-tag-count-for-graph?fkUserId=1&role=super-admin",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"tracking",
+						"get-aged-and-new-tag-count-for-graph"
+					],
+					"query": [
+						{
+							"key": "fkUserId",
+							"value": "1"
+						},
+						{
+							"key": "role",
+							"value": "super-admin"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8082/gateway/import-excel-file-with-gateway-details-to-database",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXBlcmFkbWluIiwiYXV0aCI6W10sImlhdCI6MTYzNjgwNzg2OSwiZXhwIjoxNjM2ODExNDY5fQ.Wo_U39uPkA7hIXkP5_CpKFJgFpm2yflmGdkpr9euNYc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/D:/sapna/Gateway-generation-excel.xlsx"
+						}
+					]
+				},
+				"url": "localhost:8082/gateway/import-excel-file-with-gateway-details-to-database"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8082/product/update-product-allocation",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXBlcmFkbWluIiwiYXV0aCI6W10sImlhdCI6MTYzNjYyNTk2MSwiZXhwIjoxNjM2NjI5NTYxfQ.7mHxTmrZfFgC9okq97Irr0UJkKo7qh0Rj_BJmvqOp0A",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productAllocationId\": 1,\r\n    \"productName\": \"T-Shirt\",\r\n    \"productId\": 4,\r\n    \"allocatedTagName\": \"EMB-1\",\r\n    \"allocatedTagId\": 1,\r\n    \"assetUniqueCodeOrMacId\": \"e6:76:52:90:4a:e1\",\r\n    \"user\": \"Sarang Bhongade\",\r\n    \"fkUserId\": 1,\r\n    \"dispatchLocation\": \"Hall_1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8082/product/update-product-allocation"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8082/product/get-product-allocation-for-edit/1",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXBlcmFkbWluIiwiYXV0aCI6W10sImlhdCI6MTYzNjYyNTk2MSwiZXhwIjoxNjM2NjI5NTYxfQ.7mHxTmrZfFgC9okq97Irr0UJkKo7qh0Rj_BJmvqOp0A",
+						"type": "text"
+					}
+				],
+				"url": "localhost:8082/product/get-product-allocation-for-edit/1"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8082/asset/report/get-tag-report-export-excel-or-pdf-download?tagName=EMB-1&fileType=pdf&fromDate=2021-10-01&toDate=2021-12-01&fkUserId=1&role=super-admin",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXBlcmFkbWluIiwiYXV0aCI6W10sImlhdCI6MTY0NjI5ODcwNCwiZXhwIjoxNjQ2MzAyMzA0fQ.SyNnlayklz59F7PapKK__3kkQio9xiyGZ4uV85GtIAs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8082/asset/report/get-gatewayName-report-export-excel-or-pdf-download-between-date?fileType=pdf&fromDate=2021-11-01&toDate=2021-12-01&gatewayName=Embel_Gateway_v3&fkUserId=1&role=super-admin",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"asset",
+						"report",
+						"get-gatewayName-report-export-excel-or-pdf-download-between-date"
+					],
+					"query": [
+						{
+							"key": "fileType",
+							"value": "pdf"
+						},
+						{
+							"key": "fromDate",
+							"value": "2021-11-01"
+						},
+						{
+							"key": "toDate",
+							"value": "2021-12-01"
+						},
+						{
+							"key": "gatewayName",
+							"value": "Embel_Gateway_v3"
+						},
+						{
+							"key": "fkUserId",
+							"value": "1"
+						},
+						{
+							"key": "role",
+							"value": "super-admin"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8082/asset/tracking/view-all-tracking-data-with-time-duration?tagName=EMB-1&duration=lastMonth&fkUserId=1&role=super-admin",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXBlcmFkbWluIiwiYXV0aCI6W10sImlhdCI6MTY0MTg4NDk1MSwiZXhwIjoxNjQxODg4NTUxfQ.loOMrjVS90gjodpBZrlgSlHZSE5rFkpLH-Cqgte6TI0",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8082/asset/tracking/view-all-tracking-data-with-time-duration?tagName=EMB-1&duration=lastMonth&fkUserId=1&role=super-admin",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"asset",
+						"tracking",
+						"view-all-tracking-data-with-time-duration"
+					],
+					"query": [
+						{
+							"key": "tagName",
+							"value": "EMB-1"
+						},
+						{
+							"key": "duration",
+							"value": "lastMonth"
+						},
+						{
+							"key": "fkUserId",
+							"value": "1"
+						},
+						{
+							"key": "role",
+							"value": "super-admin"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8082/asset/report/get-tag-report-export-excel-or-pdf-download?tagName=EMB-2&fileType=excel&fkUserId=1&role=super-admin",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXBlcmFkbWluIiwiYXV0aCI6W10sImlhdCI6MTY0NjI5ODcwNCwiZXhwIjoxNjQ2MzAyMzA0fQ.SyNnlayklz59F7PapKK__3kkQio9xiyGZ4uV85GtIAs",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8082/asset/report/get-tag-report-export-excel-or-pdf-download?tagName=EMB-4&fileType=excel&fkUserId=1&role=super-admin",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"asset",
+						"report",
+						"get-tag-report-export-excel-or-pdf-download"
+					],
+					"query": [
+						{
+							"key": "tagName",
+							"value": "EMB-4"
+						},
+						{
+							"key": "fileType",
+							"value": "excel"
+						},
+						{
+							"key": "fkUserId",
+							"value": "1"
+						},
+						{
+							"key": "role",
+							"value": "super-admin"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8082/asset/report/get-tag-report-export-excel-or-pdf-download-between-date?fileType=pdf&fromDate=2021-10-01&toDate=2021-12-01&tagName=EMB-1&fkUserId=1&role=super-admin",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXBlcmFkbWluIiwiYXV0aCI6W10sImlhdCI6MTY0NjI5ODcwNCwiZXhwIjoxNjQ2MzAyMzA0fQ.SyNnlayklz59F7PapKK__3kkQio9xiyGZ4uV85GtIAs",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8082/asset/report/get-tag-report-export-excel-or-pdf-download-between-date?fileType=excel&fromDate=2021-10-01&toDate=2021-12-01&tagName=EMB-4&fkUserId=1&role=super-admin",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"asset",
+						"report",
+						"get-tag-report-export-excel-or-pdf-download-between-date"
+					],
+					"query": [
+						{
+							"key": "fileType",
+							"value": "excel"
+						},
+						{
+							"key": "fromDate",
+							"value": "2021-10-01"
+						},
+						{
+							"key": "toDate",
+							"value": "2021-12-01"
+						},
+						{
+							"key": "tagName",
+							"value": "EMB-4"
+						},
+						{
+							"key": "fkUserId",
+							"value": "1"
+						},
+						{
+							"key": "role",
+							"value": "super-admin"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8082/asset/report/get-tag-report-export-excel-or-pdf-download-gateway-wise?fileType=excel&gatewayName=Embel_Gateway_v1&fkUserId=1&role=super-admin",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXBlcmFkbWluIiwiYXV0aCI6W10sImlhdCI6MTY0NjI5ODcwNCwiZXhwIjoxNjQ2MzAyMzA0fQ.SyNnlayklz59F7PapKK__3kkQio9xiyGZ4uV85GtIAs",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8082/asset/report/get-tag-report-export-excel-or-pdf-download-gateway-wise?fileType=pdf&gatewayName=Embel_Gateway_v2&fkUserId=1&role=super-admin",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"asset",
+						"report",
+						"get-tag-report-export-excel-or-pdf-download-gateway-wise"
+					],
+					"query": [
+						{
+							"key": "fileType",
+							"value": "pdf"
+						},
+						{
+							"key": "gatewayName",
+							"value": "Embel_Gateway_v2"
+						},
+						{
+							"key": "fkUserId",
+							"value": "1"
+						},
+						{
+							"key": "role",
+							"value": "super-admin"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://13.126.159.159:8080/Asset_Tracking_System/asset/report/get-tag-report-export-excel-or-pdf-download-gateway-wise?fileType=null&gatewayName=Embel_Gateway_v1&fkUserId=1&role=super-admin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/asset/tag/get-tracking_list_on_userwise/{pageNo}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8082/users/getAllUsersPerRole/{pageNo}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/product/get-product-list-for-dropdown/{pageNo}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/Tag/get-Tag_list-with-pagination/{pageNo}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/asset/tag/get-tracking-list-for-filter-tagnamewise-with-pagination/{pageNo}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8082/users/forgot-password?email=pchaudhari883@gmail.com",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/product/get-product-tag-allocation-list-from-product-name-with-pagination/{pageNo}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/asset/tracking/view-all-tracking-data-with-time-duration-and-gateway-report-view-with-pagination/0?=Embel_Gateway_v1&duration=lastMonth&fkUserId=1&role=super-admin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8082/users/signin?username=superadmin&password=sarang123",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8082/product/get-product-tag-allocation-list/0?tagName=EMB-1&fkUserId=1&role=super-admin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/product/get-product-tag-allocation-list-from-product-name-with-pagination",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://65.1.68.67:8080/iotmeter/users/signin?username=superadmin&password=Superadmin@123",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/tag/get_tag_list_for_product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/asset/tracking/view-all-Low-battery-percentage",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/asset/tracking/view-all-Low-battery-percentage-Alert-Count",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/tag/update-tag",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/tag/get-single-tag/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/asset/tracking/get_tracking_details_of_tag",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8082/tag/get-asset-tag-privious-allocated-history?assetTagName=EMB-2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8082/Tag/get-assetTagWorking-NonWorking-count?fkUserId=2&role=admin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/asset/tracking/get_tracking_details_of_tag_bulk-with-text-file",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:/asset/tracking/get_tracking_details_tagName_duration_stayTime_for_graph",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/asset/tracking/view-all-Low-battery-PercentagefilterTagWise",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/tag/get-agedTag-Count?fkUserId=1&role=super-admin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/asset/tracking/view-all-tracking-data-with-time-duration-with-pagination/{pageNo}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/product/get-product-allocation-History",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/asset/tracking/get_tracking_details_tagName_duration_stayTime_for_graph?duration=lastWeek&tagName=EMB-3&fkUserId=1&role=super-admin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8082/Tag/get-assetTagWorking-NonWorking-count?fkUserId=2&role=admin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/asset/tracking/get_tracking_details-test-gsm",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request/asset/tracking/get_tracking_details_of_tag_bulk-with-text-file",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8082/category/get-category_list?fkUserId=13&role=admin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:/user/get-user_count?fkUserId=13&role=admin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://13.126.159.159:8080/Asset_Tracking_System/Tag/get-Tag_list?fkUserId=1&role=super-admin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/Tag/get-Tag_list?fkUserId=1&role=super-admin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8082/users/signin?username=superadmin&password=sarang123",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/asset/tracking/get_tracking_details_of_tag_bulk-with-text-json",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"GSrNo\":\"G123\",\"GMacId\":\"c4:4f:33:15:c9:21\",\"TName\":\"EMB1\",\"TMacId\":\"e6:76:52:90:4a:e1\",\"BSN\":\"20001d24\",\"BatStatus\":\"80\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8082/asset/tracking/get_tracking_details_of_tag_bulk-with-text-json"
+			},
+			"response": []
+		},
+		{
+			"name": "http://34.231.193.123:8082/tracking/get-gateway-wise-tag-count?fkUserId=1&role=super-admin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/asset/tracking/get_tracking_details-test-gsm",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GPS ASSET TRACKING DETAILShttp://34.231.193.123",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXBlcmFkbWluIiwiYXV0aCI6W10sImlhdCI6MTY1MTY2OTUzMCwiZXhwIjoxNjUxNjczMTMwfQ.NLfdNorqSQ6Nd1-vcRM5dqvyPkHicVEIOMvhc_fPUUc",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"gSrNo\": \"G122\",\r\n        \"gMacId\": \"24:0A:C4:16:31:80\",\r\n        \"tMacId\": \"cb:da:4c:3e:3f:c2\",\r\n        \"bSN\": \"00000004\",\r\n        \"batStat\": \"100\",\r\n        \"TS\": \"2023-03-25 02:00:00\",\r\n        \"tagDist\": \"11.61\"\r\n    }\r\n    , {\r\n        \"gSrNo\": \"G122\",\r\n        \"gMacId\": \"24:0A:C4:16:31:80\",\r\n        \"tMacId\": \"cb:da:4c:3e:3f:c2\",\r\n        \"bSN\": \"00000004\",\r\n        \"batStat\": \"100\",\r\n        \"TS\": \"2023-03-25 02:00:00\",\r\n        \"tagDist\": \"11.61\"\r\n    }\r\n    , {\r\n        \"gSrNo\": \"G122\",\r\n        \"gMacId\": \"24:0A:C4:16:31:80\",\r\n        \"tMacId\": \"cb:da:4c:3e:3f:c2\",\r\n        \"bSN\": \"00000004\",\r\n        \"batStat\": \"100\",\r\n        \"TS\": \"2023-03-25 02:00:00\",\r\n        \"tagDist\": \"11.61\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8082/asset/tracking/get_tracking_details_of_tag_bulk"
+			},
+			"response": []
+		},
+		{
+			"name": "http://34.231.193.123:8082/gateway/get-gateway_list?fkUserId=1&role=super-admin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/gateway/update-gateway",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/asset/tracking/view-all-tracking-data-today-duration-with-pagination/{pageNo}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8082/user/14",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/product/get-productallocation-deleteHistory-list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://34.231.193.123:8082/tracking/get-gateway-wise-tag-count?fkUserId=1&role=super-admin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/user/get-user-details-for-issue-and-contactus/{fkUserId}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/asset/tracking/get_tracking_details_of_tag_bulk",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "?tagName=EMBEL&duration=lastWeek&fkUserId=1&role=super-admin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/asset/tracking/view-all-tracking-data-with-time-duration-with-pagination/0?tagName=EMBEL&duration=lastMonth&fkUserId=1&role=super-admin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://34.231.193.123:8082/asset/tag/get-tracking-list-for-filter-tagnamewise-with-pagination/0?tagName=EMB22&fkUserId=1&role=super-admin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://34.231.193.123:8082/tracking/get-gateway-wise-tag-countnew?fkUserId=1&role=super-admin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/tag/get-tag-Wise-gateway-View-between-date/{pageNo}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/tag/get-tag-Wise-gateway-View-between-date-and-time-Report",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8082/asset/tracking/get_all_gps_tracking_details_location?tagName=&fkUserId=3&role=user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/tracking/display-graph-gateway-wise-aged-and-new-tag-count",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/tag/get-gateway-list-between-report-excel",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/asset/tracking/add_limits",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/asset/tracking/update_limit",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://34.231.193.123:8082/tracking/get-aged-and-new-tag-count-for-graphnew?fkUserId=1&role=super-admin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://34.231.193.123:8082/asset/tracking/get_limits/2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXBlcmFkbWluIiwiYXVkIjoiUmVmcmVzaCIsImlhdCI6MTY1ODgxNDU0MCwiZXhwIjoxNjU4OTAwOTQwfQ.OHd6lg5Yc6SnN9m_j_ptRKFeS4Af-9mEIuTYPdGTClw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n\r\n{\"gSrNo\":\"G123\",\"gMacId\":\"24:0a:c4:16:31:9c\",\"tMacId\":\"d1:75:3d:ba:3a:25\",\"bSN\":\"e9d24924\",\"batStat\":\"90\",\"heartbit\":\"120\"}\r\n\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8082/procces"
+			},
+			"response": []
+		},
+		{
+			"name": "/asset/tracking/get-all-list-mapping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8082/asset/tracking/add-lablel-with-column",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/asset/tracking/delete-mapping-with-column/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/asset/tracking/delete-mapping-with-column",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/asset/tracking/get-label-list-for-dropdown",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://34.231.193.123:8082/category/get-category_list?fkUserId=3&role=user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://52.73.10.171:8082/employeeleave/login?username=sumeet&password=sumeet",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8082/asset/tracking/get-all-list-mapping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/asset/tracking/get-all-list-admincolumns",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/asset/tracking/get-admincolumns-by-id/{userid}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/asset/report/get-tag-report-export-excel-or-pdf-download-for-dynamic-column",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/asset/tracking/get-all-list-admincolumns",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://34.231.193.123:8082/asset/tracking/get-view-list-tracking-columnwise/1?fkUserId=1&role=super-admin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://34.231.193.123:8082/asset/tracking/get-all-list-admincolumns",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://34.231.193.123:8082/asset/tag/get-tracking_list_on_userwise/0?fkUserId=1&role=super-admin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://34.231.193.123:8082/asset/report/get-tracking-report-for-dynamic-columns?fileType=pdf&columnname=temperature&fkUserId=1&role=super-admin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://34.231.193.123:8082/asset/tracking/get_all_gps_tracking_details_location?fkUserId=1&role=super-admin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://34.231.193.123:8082/asset/tracking/get-all-list-admincolumns",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/user/import-excel-file-with-user-details-to-database",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/tag/import-excel-file-with-tag-details-to-database",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/gateway/import-excel-file-with-gateway-details-to-database",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/asset/tracking/get-columnmapping-By-id/{userid}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/asset/tag/get-tracking_list_on_userwise/{pageNo}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/user/import-excel-file-with-product-allocation-to-database",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://34.231.193.123:8082/tag/get-agedTag-Count?fkUserId=1&role=super-admin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYXBuYSIsImF1dGgiOltdLCJpYXQiOjE2NjA5OTA5MzcsImV4cCI6MTY2MDk5NDUzN30.yjQ23pr-Xdczazx6qzeRVTPl-3Dp0f4NUkNDIg3Xrh0",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "      {\r\n          \r\n            \"username\": \"hari\",\r\n            \"role\": \"admin\",\r\n            \"firstName\": \"hari\",\r\n            \"lastName\": \"Chaudhari\",\r\n            \"phoneNumber\": 80458213698,\r\n            \"emailId\": \"haria@123\",\r\n            \"password\": \"hari\",\r\n            \"companyName\": \"embel\",\r\n            \"address\": \"jalgaon\",\r\n\r\n            \"OrganizationId\":\"65\",\r\n            \"UserId\":\"\",\r\n            \"AdminId\":\"\"\r\n      \r\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8082/users/signup"
+			},
+			"response": []
+		},
+		{
+			"name": "http://34.231.193.123:8082/users/forgot-password?email=tushankashedbale29@gmail.com",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8082/tracking/get-gateway-wise-tag-countnew?fkUserId=1&role=super-admin",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXBlcmFkbWluIiwiYXVkIjoiUmVmcmVzaCIsImlhdCI6MTY2NDE3NDMyNiwiZXhwIjoxNjY0MjYwNzI2fQ.PShqeu0cvTkpgMOCWhdTN76qvA7PgNbL75FabzGKsdU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[1]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8082/asset/tracking/get-all-EmployeeUser/0"
+			},
+			"response": []
+		},
+		{
+			"name": "http://34.231.193.123:8082/tracking/gateway/get-gateway-list-for-dropdown?fkUserId=54&role=organization",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYXBuYSIsImF1ZCI6IlJlZnJlc2giLCJpYXQiOjE2NjUxMzc2MTMsImV4cCI6MTY2NTIyNDAxM30.wCLgLSnIPIDsduCV-yvOBFa2OxW-3v1pjQisBUhC1FE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"fkadminId\": 2,\r\n    \"image\": \"GatewayNewImage\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://34.231.193.123:8082/asset/tracking/view-all-tracking-data-with-time-duration-with-pagination/0?tagName=EMB14&duration=lastWeek&fkUserId=1&role=super-admin",
+					"protocol": "http",
+					"host": [
+						"34",
+						"231",
+						"193",
+						"123"
+					],
+					"port": "8082",
+					"path": [
+						"asset",
+						"tracking",
+						"view-all-tracking-data-with-time-duration-with-pagination",
+						"0"
+					],
+					"query": [
+						{
+							"key": "tagName",
+							"value": "EMB14"
+						},
+						{
+							"key": "duration",
+							"value": "lastWeek"
+						},
+						{
+							"key": "fkUserId",
+							"value": "1"
+						},
+						{
+							"key": "role",
+							"value": "super-admin"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8082/asset/report/get-tag-report-export-excel-or-pdf-download-gateway-wise?fileType=excel&fromDate=2022-12-14&toDate=2022-12-27&gatewayName=GW2&fkUserId=1&role=super-admin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "today",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdW1lZXQxMjMiLCJhdWQiOiJSZWZyZXNoIiwiaWF0IjoxNjcyNzIwNTU3LCJleHAiOjE2NzI4MDY5NTd9.X-f06csgqy9Fom_-5mzPt4bBjybtr4EDprFZDUJrO20",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8082/asset/tracking/get-drop-down-listNew?fkUserId=708&role=user",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"asset",
+						"tracking",
+						"get-drop-down-listNew"
+					],
+					"query": [
+						{
+							"key": "fkUserId",
+							"value": "708"
+						},
+						{
+							"key": "role",
+							"value": "user"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "try",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "adminpara",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "signup",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8082/tag/getgateway-list-to-view-from-SuperAdmin/0?fkUserId=54&role=organization&category=BLE",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Parameter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8082/users/get-all-admin-list-created-by-super-admin?fkUserId=1&role=super-admin&category=BLE",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get All User List For Validation Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXBlcmFkbWluIiwiYXVkIjoiUmVmcmVzaCIsImlhdCI6MTY4MTQ2NzQxNSwiZXhwIjoxNjgxNTUzODE1fQ.TeHcDGSnpfKN2CRCk-G8hZjYUjJKKKROZdcYlh9-4A4"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8082/users/get-all-user-list-for-validation"
+			},
+			"response": []
+		}
+	]
+}

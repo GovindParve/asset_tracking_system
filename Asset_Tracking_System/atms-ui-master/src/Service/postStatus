@@ -1,0 +1,15 @@
+// import Axios from "../utils/axiosInstance";
+
+// export const postStatus = async (status,issueid) => {
+//   let token = localStorage.getItem("token");
+//   let fkUserId = localStorage.getItem("fkUserId");
+//   let role = localStorage.getItem("role");
+//   return Axios.get(`/issue/update-status?status=${status}&issueid=${issueid}&fkUserId=${fkUserId}&role=${role}`,{ headers: { "Authorization": `Bearer ${token}` },
+// })
+// };
+import Axios from "../utils/axiosInstance";
+
+export const postStatus = async (payload) => {
+ // return Axios.post(`/users/forgot-password?email=${payload.email}`);
+  return Axios.post(`/issue/update-status?status=${payload.status}&issueid=${payload.issueid}&fkUserId=${fkUserId}&role=${role}`);
+};

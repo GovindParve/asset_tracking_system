@@ -1,0 +1,217 @@
+.device__btn__wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .userAdd__wrapper h3 {
+    color: #0a1865;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .Device__form__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 30px;
+    row-gap: 20px;
+    grid-column-gap: 20px;
+    -webkit-column-gap: 20px;
+    column-gap: 20px;
+  }
+  /* main.main {
+    background: #fff;
+  } */
+  
+  .error__msg,
+  .mustRequired {
+  color: red;
+  margin: 0 10px;
+  }
+  .Device__form__wrapper label {
+    color: #000;
+    font-weight: 600;
+    margin: 0;
+  }
+  .userAdd__wrapper {
+    padding: 0 0 20px 0;
+  }
+
+  main.main {
+    background: #f4f5fa;
+  }
+
+  .btn-info {
+    color: #fff;
+    /* background-color: #63c2de;
+    border-color: #63c2de; */
+    font-weight: 600;
+    font-size: 16px;
+    background-color: #c6045d;
+      border-color: #c6045d;
+  }
+  .btn-primary {
+      color: #fff;
+      /* background-color: #0a1865;
+      border-color: #0a1865; */
+      background-color: #c6045d;
+      border-color: #c6045d;
+      font-weight: 600;
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+  .btn-primary:hover {
+    color: #fff;
+    background-color: #990549;
+    border-color: #990549;
+  }
+  
+  button.baterry_item.dropdown-item {
+    padding: 10px 0px !important;
+  }
+  .battery_field {
+    padding: 0px 16px;
+  }
+  .battery_field h3 {
+    font-size: 16px;
+    font-weight: 700;
+    display: inline-block;
+  }
+  .battery_field h4 {
+    font-size: 15px;
+    display: inline-block;
+  }
+  button.btn-success {
+    background-color: #c01664;
+    border: none;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    /* margin: 2px 13px; */
+  }
+  button.btn-success:hover {
+    color: #fff !important;
+    background-color: #9e0c4f !important;
+    
+  }
+  .btn-success:focus {
+    box-shadow: none !important;
+    outline: none !important;
+    /* border: none !important; */
+  }
+  .btn-info {
+    color: #fff;
+    /* background-color: #63c2de;
+    border-color: #63c2de; */
+    font-weight: 600;
+    font-size: 16px;
+    background-color: #c6045d;
+      border-color: #c6045d;
+  }
+  .btn-primary {
+    color: #fff;
+    /* background-color: #0a1865;
+    border-color: #0a1865; */
+    background-color: #c6045d;
+    border-color: #c6045d;
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+  .btn-primary {
+    color: #fff;
+    background-color: #c6045d;
+    border-color: #c6045d;
+  }
+  
+  .btn-primary:hover {
+    color: #fff;
+    background-color: #990549;
+    border-color: #990549;
+  }
+  
+  .table__scroll {
+    width: 100%;
+    display: table;
+    border-spacing: 0;
+    border-collapse: collapse;
+  }
+  .Device__table__col {
+    cursor: pointer;
+    font-weight: 600;
+  }
+  .table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #23282c;
+    background: #fff;
+  }
+  .tablerow {
+    background: #ffffff;
+      /* border-color: #c20c6c; */
+      color: #c20c6c;
+      text-transform: uppercase;
+    /* background: #666cbb;
+    color: #fff;
+    text-transform: uppercase; */
+  }
+  .loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 100px;
+    height: 100px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
+
+  @media screen and (max-width: 992px) {
+  
+
+    .Device__form__wrapper {
+      grid-template-columns: 1fr; 
+    }
+  }
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  @media screen and (max-width: 520px) {
+ 
+    .card__value {
+      font-weight: 600;
+      font-size: 1.9rem;
+    }
+  
+    .fa {
+      width: 25px;
+      height: 25px;
+      line-height: 25px;
+      font-size: 14px;
+    }
+  
+  }
+
+  .btn-danger {
+  color: #fff;
+  background-color: #7d0504;
+  border-color: #7d0504;
+  font-weight: 600;
+  text-transform: uppercase;
+  }
+  .Device__table__col td {
+  color: #504d4d;
+  font-size: 16px;
+  /* text-transform: capitalize; */
+  }
+ 

@@ -1,0 +1,139 @@
+.user__form__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 10px;
+  column-gap: 20px;
+}
+.error__msg, .mustRequired {
+  color: red;
+  padding: 0 10px;
+}
+.userLabel {
+  font-weight: 600;
+  padding: 0 5px;
+}
+.userAdd__wrapper h3 {
+  color: #0a1865;
+  text-transform: uppercase;
+  text-align: center;
+}
+.user__form__wrapper input, .user__form__wrapper select {
+  /* border: none; */
+  /* border-bottom: 1px solid lightgray; */
+  border-radius: 5px;
+  margin: 7px 0;
+  font-size: 16px;
+  background: #fff;
+}
+span.show-icon {
+  position: absolute;
+  top: 58%;
+  left: 96%;
+}
+i.fa.fa-eye-slash {
+  background:none !important;
+  border-radius: 100%;
+  color: #5c6873 !important; 
+  width: 9px !important;
+  height: 0 !important;
+  line-height: 0 !important;
+  text-align: center;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+
+i.fa.fa-edit.fa-lg {
+  background: #c6045d;
+  border-radius: 3px !important;
+  color: #ffffff;
+  width: 45px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  display: inline-block;
+  margin-right: 5px;
+}
+.tooltip-text {
+  width: 65px;
+  position: absolute;
+  display: none;
+  background: ghostwhite;
+  padding: 10px;
+  font-size: 13px;
+  border-radius: 3px; 
+  transition: opacity 1s ease-out;
+  margin-right: 40px;
+}
+.fa.fa-edit.fa-lg:hover + .tooltip-text{
+  display: block;
+  color: black;
+  /* animation: fadeIn 2s; */
+}
+label.label {
+  font-size: 16px;
+  font-weight: 500;
+}
+.btn-user .btn-primary {
+  color: #fff;
+  /* background-color: #0a1865;
+  border-color: #0a1865; */
+  background-color: #c6045d;
+  border-color: #c6045d;
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin: 0 6px !important;
+}
+.btn-user .btn-primary {
+  color: #fff;
+  background-color: #c6045d;
+  border-color: #c6045d;
+  cursor: pointer;
+}
+.btn-user .btn-primary a {
+  color: #fff;
+}
+.btn-user .btn-primary a:hover {
+text-decoration: none;
+}
+
+.btn-user .btn-primary:hover {
+  color: #fff;
+  background-color: #990549;
+  border-color: #990549;
+}
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #c01664;
+  width: 100px;
+  height: 100px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+
+
+@media screen and (max-width: 520px) {
+ 
+  .card__value {
+    font-weight: 600;
+    font-size: 1.9rem;
+  }
+
+  .fa {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 14px;
+  }
+  .user__form__wrapper {
+    grid-template-columns: 1fr;
+  }
+  
+  }

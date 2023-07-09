@@ -1,0 +1,10 @@
+com.embel.asset
+com.embel.asset.bean
+com.embel.asset.controller
+com.embel.asset.dto
+com.embel.asset.entity
+com.embel.asset.exception
+com.embel.asset.helper
+com.embel.asset.repository
+com.embel.asset.security
+com.embel.asset.service

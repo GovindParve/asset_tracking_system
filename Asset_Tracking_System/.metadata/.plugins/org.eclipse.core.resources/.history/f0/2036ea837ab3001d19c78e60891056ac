@@ -1,0 +1,306 @@
+package com.embel.asset.controller;
+
+import static org.hamcrest.CoreMatchers.nullValue;
+
+import java.io.IOException;
+import java.text.ParseException;
+import java.util.List;
+
+import org.apache.poi.EncryptedDocumentException;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.servlet.error.ErrorController;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.core.io.Resource;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.embel.asset.bean.AssetGatewayBean;
+import com.embel.asset.bean.ResponseGetwayWorkingNonWorkingbean;
+import com.embel.asset.bean.ResponseworkingNonworkinGatewaybean;
+import com.embel.asset.dto.AssetGatewayDto;
+import com.embel.asset.entity.AssetGateway;
+import com.embel.asset.entity.AssetGatewayStock;
+import com.embel.asset.entity.AssetTagStock;
+import com.embel.asset.repository.AssetGatewayRepository;
+import com.embel.asset.repository.AssetGatewayStockRepository;
+import com.embel.asset.service.AssetGatewayService;
+
+import ch.qos.logback.core.status.Status;
+//23-02-2023
+@CrossOrigin("*")
+@RestController
+public class AssetGatewayController implements ErrorController {
+//leatest
+	@Autowired
+	AssetGatewayService gatewayService;
+
+	@Autowired
+	AssetGatewayStockRepository assetGatewayStockRepo;
+	//add Gateway Details
+	@PostMapping("/gateway/asset_gateway")
+	public String addGateway(@RequestBody AssetGatewayDto dto)
+	{	
+		
+		return gatewayService.addAssetGateway(dto);
+	}
+	
+	@PostMapping("/gateway/change_possitions")
+	public String addGateway(String gatewayName,long x,long y,String fkUserId,String role)
+	{	
+		
+		return gatewayService.changePossitions(gatewayName,x,y,fkUserId,role);
+	}
+//..............................pagination..........................................
+	
+	@GetMapping("/gateway/get-gateway_list-pagination/{pageNo}")
+	public Page<AssetGatewayBean> getAllGatewayList(@PathVariable String pageNo,String fkUserId,String role)
+	{			
+		Pageable pageable=PageRequest.of(Integer.parseInt(pageNo), 10);
+		return  gatewayService.getAllGatewayListWithPagination(fkUserId,role,pageable);		
+	}
+//.......................................................
+	@GetMapping("/gateway/get-gateway-Nonworking-Count")
+	public ResponseGetwayWorkingNonWorkingbean WorkingAndNonWorkingCount(String fkUserId,String role,String category)
+	{
+//		if(hours=="")
+//		{
+//			
+//			hours= "0";
+//			
+//		}
+	
+		//ResponseGetwayWorkingNonWorkingbean bean= 
+		
+		
+		return gatewayService.getWorkingAndNonWorkingCount(fkUserId,role,category);
+	}
+	
+	
+	
+	
+//...........................................................................................................
+	//Get All Gateway List
+	@GetMapping("/gateway/get-gateway_list")
+	public List<AssetGatewayBean> getAllGatewayList(String fkUserId,String role)
+	{			
+		
+		return  gatewayService.getAllGatewayList(fkUserId,role);		
+	}
+	@GetMapping("/gateway/get-gateway_list-for-validation")
+	public List<AssetGateway> getAllGatewayListvalidation()
+	{			
+		
+		return  gatewayService.getAllGatewayListvalidation();		
+	}
+//...............................................................................................
+	//Get All Gateway List
+	@GetMapping("/gateway/get-gateway_list_for_workingNon_working_gateway")
+	public List<ResponseworkingNonworkinGatewaybean> getAllGatewayListWorkingNonWorkingGateway(String fkUserId,String role)
+	{			
+		
+		return  gatewayService.getAllGatewayListCheacking(fkUserId,role);		
+	}
+	
+	@GetMapping("/gateway/get-gateway_list_for_working_gateway")
+	public List<ResponseworkingNonworkinGatewaybean> getAllGatewayListWorkingWorkingGateway(String fkUserId,String role)
+	{			
+		
+		return  gatewayService.getAllGatewayListWorkingWorkingGateway(fkUserId,role);		
+	}
+	@GetMapping("/gateway/get-gateway_list_for_Nonworking_gateway")
+	public List<ResponseworkingNonworkinGatewaybean> getAllGatewayListNonWorkingGateway(String fkUserId,String role)
+	{			
+		
+		List<ResponseworkingNonworkinGatewaybean> objGatewaybeans=  gatewayService.getAllGatewayListNonWorkingGateway(fkUserId,role);	
+		
+		System.out.println("objGatewaybeans:"+objGatewaybeans);
+		return objGatewaybeans;
+	}
+//..............................................................................................................
+	//Get gateway Count 
+	@GetMapping("/gateway/get-gateway_count")
+	public String gatewayCount(String fkUserId, String role,String category)
+	{		
+		return  gatewayService.gatewayCount(fkUserId,role,category);		
+	}
+
+	//Get gateway for Edit
+	@GetMapping("/gateway/get-gateway-for-edit/{gatewayid}")
+	public List<AssetGatewayBean> getGatewayForEdit(@PathVariable(value="gatewayid") Long id)
+	{
+		return gatewayService.getGatewayForEdit(id);
+	}
+
+	//update gateway
+	@PutMapping("/gateway/update-gateway")
+	public String updateGateway(@RequestBody AssetGatewayDto dto)
+	{
+	
+		return gatewayService.updateGateway(dto);
+	}	
+
+	// Delete gateway Details from Database
+	@DeleteMapping("/gateway/delete-gateway/{gatewayid}")
+	public String deleteGateway(@PathVariable(value="gatewayid") Long PkID)
+	{
+		gatewayService.deleteGateway(PkID);
+		return "Gateway Delete Successfully...";
+	}
+
+	//Multiple Delete gateway Details from Database
+	@PostMapping("/gateway/delete-multiple-gateway")
+	public String deleteAllSelectedGateway(@RequestBody List<Long> PkIDs)
+	{
+		
+		gatewayService.deleteAllSelectedGateway(PkIDs);
+		return "All Selected Gateway Delete Successfully...";
+	}
+
+	//Get single Gateway Details	
+	@GetMapping("/gateway/get-single-gateway/{id}") 
+	public AssetGatewayBean  getSingleGatewayById(@PathVariable("id") String id) 
+	{ 
+		AssetGateway singleGateway = gatewayService.getGatewayDetailsById(Long.parseLong(id));
+		System.out.println("&&&&&&&&&&&" + singleGateway);
+
+		if(singleGateway != null)
+		{
+			AssetGatewayBean gateway = new AssetGatewayBean();
+			gateway.setGatewayId(singleGateway.getGatewayId());
+			gateway.setGatewayName(singleGateway.getGatewayName());
+			gateway.setAssetTagCategory(singleGateway.getAssetTagCategory());
+			gateway.setGatewayBarcodeOrSerialNumber(singleGateway.getGatewayBarcodeSerialNumber());
+			gateway.setGatewayLocation(singleGateway.getGatewayLocation());
+			gateway.setGatewayUniqueCodeMacId(singleGateway.getGatewayUniqueCodeMacId());
+			gateway.setUser(singleGateway.getUser());
+			gateway.setAdmin(singleGateway.getAdmin());
+			gateway.setFkAdminId(singleGateway.getFkAdminId());
+			gateway.setFkUserId(singleGateway.getFkUserId());
+			gateway.setWakeupTime(singleGateway.getWakeupTime());
+			gateway.setDatetime(singleGateway.getDatetime());
+			
+//			gateway.setDate(singleGateway.getDate());
+//			gateway.setTime(singleGateway.getTime());
+			
+			gateway.setTimeZone(singleGateway.getTimeZone());
+
+			return gateway; 
+		}
+		else
+		{
+			return new AssetGatewayBean();
+		}
+
+	}
+
+	//Get All Gateway List for dropdown
+	@GetMapping("/gateway/get-gateway-list-for-dropdown")
+	public List<AssetGatewayBean> getAllGatewayListForDropdown(String fkUserId, String role)
+	{			
+		return  gatewayService.getAllGatewayListForDropdown(fkUserId,role);		
+	}
+
+	//Get All Gateway Location List for dropdown
+	@GetMapping("/gateway-location/get-gateway-location-list-for-dropdown")
+	public List<String> getAllGatewayLocationListForDropdown(String fkUserId, String role)
+	{			
+		return  gatewayService.getAllGatewayLocationListForDropdown(fkUserId,role);		
+	}
+	
+	//----------------Excel file upload- from SuperAdmin-------------------------------
+	
+	
+	@GetMapping("/tag/getgateway-list-to-view-from-SuperAdmin/{pageNo}")
+	public Page<AssetGatewayStock> getFromSuperAdminToview(@PathVariable String pageNo,String fkUserId,String role,String category)
+	{
+		Pageable pageable=PageRequest.of(Integer.parseInt(pageNo), 10);
+		if(role.equals("organization"))
+		{
+			 return assetGatewayStockRepo.getFromSuperAdminToview(fkUserId,category,pageable);
+		}
+//		@Query(value="SELECT * FROM asset_gateway_stock  WHERE organization_id=?1 ANd asset_tag_category=?2",nativeQuery=true)
+//		Page<AssetGatewayStock> getFromSuperAdminToview(String fkUserId, String category, Pageable pageable);
+		
+		return null;
+	  
+	
+	}
+	
+	
+	
+	
+	
+	@PostMapping("/gateway/import-excel-file-with-gateway-from-SuperAdmin")
+	public String importExcelFileFromSuperAdmin(@RequestParam("file") MultipartFile file) throws IOException, EncryptedDocumentException, InvalidFormatException {
+
+	
+		String status= gatewayService.addExcelFileDataToDatabaseFromSuperAdmin(file);
+
+		return status;
+	}
+
+	
+	//----------------Excel file upload--------------------------------
+
+		@PostMapping("/gateway/import-excel-file-with-gateway-details-to-database")
+		public String importExcelFile(@RequestParam("file") MultipartFile files,String username) throws IOException, EncryptedDocumentException, InvalidFormatException {
+
+		
+			String status= gatewayService.addExcelFileDataToDatabase(files,username);
+
+			return status;
+		}
+		
+		
+		
+		@GetMapping("/gateway/get-gateway-From-SuperAdmin-excel-download")
+		public ResponseEntity<Resource> getUserReportForExportDownload(String fileType,String fkUserId, String role,String category) throws ParseException 
+		{
+						
+		
+			if(fileType.equals("excel"))
+			{
+				String filename = "AssetGatewayFromSuperAdmin.xls";
+				InputStreamResource file=null;
+				try {
+					file =new InputStreamResource(gatewayService.loadAssetGatewayFromSuperAdminDataExcel(fkUserId,role,category));
+
+				} catch (Exception e) {
+					System.out.println(e);
+				}
+//			if(file==null)
+//			{
+//				return (ResponseEntity<Resource>) ResponseEntity.noContent();
+//			}
+				
+				return ResponseEntity.ok()
+						.header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + filename)
+						.contentType(MediaType.parseMediaType("application/vnd.ms-excel"))
+						.body(file);
+			}
+		
+			
+			return null;
+		}
+		
+		
+		
+		
+		
+}

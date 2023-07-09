@@ -1,0 +1,71 @@
+.Device__form__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 30px;
+  column-gap: 20px;
+}
+.userAdd__wrapper h3 {
+  color: #0a1865;
+  text-transform: uppercase;
+  text-align: center;
+}
+main.main {
+  background: #fff;
+}
+.Device__form__wrapper input, .Device__form__wrapper select {
+  border: none;
+  border-bottom: 1px solid lightgray;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #0a1865;
+  border-color: #0a1865;
+}
+.btn-primary:hover {
+  color: #fff;
+  background-color: #0a1865;
+  border-color: #0a1865;
+}
+
+.error__msg,
+.mustRequired {
+  color: red;
+}
+.device__hr {
+  border: 1px solid black;
+}
+
+label {
+  font-size: 1rem;
+}
+.DeviceLabel {
+  font-size: 24px;
+}
+.Devicestyle {
+  margin: 15px 0;
+  box-sizing: border-box;
+  border-top: 10px solid #fff;
+  padding: 15px 10px;
+  box-shadow: 5px 5px 10px 10px #d2cad8;
+}
+@media screen and (max-width: 520px) {
+ 
+  .card__value {
+    font-weight: 600;
+    font-size: 1.9rem;
+  }
+ 
+  .fa {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 14px;
+  }
+  .Device__form__wrapper {
+    grid-template-columns: 1fr;
+}
+
+} 

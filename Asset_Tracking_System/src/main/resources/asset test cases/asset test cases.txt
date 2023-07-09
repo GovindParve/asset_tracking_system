@@ -1,0 +1,82 @@
+.................................................................................................................................................................................
+
+
+
+
+
+
+
+
+	1) If the update time is 0 for all then compare exit time only and update...(Regular Entry = Past Entry)
+
+		TAG	Location	Entry		Exit		Update
+	
+		EMB1	   G1		1		NA|3|2		0
+
+		EMB1	   G3		3		NA		0
+
+		EMB1	   G2		2		3		0
+
+	2) If the update time not an 0 then compare update time and adjust exit time and entry time this is a revisit case(Regular Update Entry = Past Entry) 
+	
+		TAG	Location	Entry		Exit			Update		Bat
+
+		EMB1	   G1		1		NA|6|03:30		0		100
+
+		EMB1	   G1		1		NA|6|03:30		2		95
+
+		EMB1	   G1		1		NA|6|03:30		3		90
+
+		EMB1	   G1		1|4		NA|6|03:30|6		4|0		85
+
+		EMB1	   G1		1|4		NA|6|03:30|6		5		80
+
+		EMB1	   G3		6		NA			0
+
+		EMB1	   G2		03:30		4			0
+
+	3) If the dublicate combination of tag and location then update previous update time with the latest one and don't enter the dublicate combination.. (Regular Entry = Update Entry)
+
+		TAG	Location	Entry		Exit			Update		Bat
+
+		EMB1	   G1		1		NA|3			0|2
+
+		EMB1	   G3		3		NA			0
+
+		EMB1|	   G1|		2|		
+	   
+	4) In a second test case if the exit time overlap with the update time then exit time will set which greater if no one is greter OR set N/A also entry time set acording to which is latest one ..
+
+		TAG	Location	Entry		Exit				Update		Bat
+
+		EMB1	   G1		1		NA|01:30			0		100
+
+		EMB1	   G1		1|2		NA|01:30|NA|03:30		2|0		95
+
+		EMB1	   G1		1|2		NA|01:30|NA|03:30		3		90
+
+		EMB1	   G1		1|2|4		NA|01:30|NA|03:30|NA		4		85
+
+		EMB1	   G1		1|2|4		NA|01:30|NA|03:30|NA		5		80
+
+		EMB1	   G3		01:30		NA|2			
+
+		EMB1	   G2		03:30		4
+
+	
+	5) Update parameter and entry time are same then don't save the record ...
+
+	6) True Case - Entry time < update time(check condition = initally it will be 0 if any update then it will be greater than entry and less than exit) < Exit time
+
+	7) False case-
+		i)   Entry time  > Exit time 
+		ii)  Entry time  > Update time
+		iii) Update time > Exit time
+		iv)  Update time < Entry time
+		v)   Initially Update time should be 0
+		vi)  Entry time = update time = Exit time (Not Valide)
+
+
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+

@@ -1,0 +1,157 @@
+.category__form__wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 30px;
+  column-gap: 20px;
+}
+
+.error__msg,
+.mustRequired {
+  color: red;
+  padding: 0 10px;
+}
+
+.userLabel {
+  font-weight: 600;
+  padding: 0 5px;
+}
+
+.category_form {
+  width: 50%;
+  margin: auto;
+  /* box-shadow: 0px 4px 30px 5px lightblue; */
+  border: 1px solid #dfdfdf;
+  padding: 20px;
+}
+
+.category_form h3 {
+  color: #0a1865;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.category__form__wrapper input,
+.category__form__wrapper select {
+  border-radius: 5px;
+  margin: 7px 0;
+  font-size: 14px;
+  background: #fff;
+}
+
+
+i.fa.fa-edit.fa-lg {
+  background: #c6045d;
+  border-radius: 3px !important;
+  color: #ffffff;
+  width: 45px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.tooltip-text {
+  width: 65px;
+  position: absolute;
+  display: none;
+  background: ghostwhite;
+  padding: 10px;
+  font-size: 13px;
+  border-radius: 3px;
+  transition: opacity 1s ease-out;
+  margin-right: 40px;
+}
+
+.fa.fa-edit.fa-lg:hover+.tooltip-text {
+  display: block;
+  color: black;
+}
+
+
+
+label.label2 {
+  float: left;
+  margin: 11px 3px;
+  font-weight: 500;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #c6045d;
+  border-color: #c6045d;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #990549;
+  border-color: #990549;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #c01664;
+  width: 100px;
+  height: 100px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+
+@media screen and (max-width: 992px) {
+
+ 
+
+  .category_form {
+    width: 95% !important;
+  }
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 520px) {
+ 
+
+  .card__value {
+    font-weight: 600;
+    font-size: 1.9rem;
+  }
+
+
+  .fa {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 14px;
+  }
+
+  .category__form__wrapper {
+    grid-template-columns: 1fr;
+  }
+}

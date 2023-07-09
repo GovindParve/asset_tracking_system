@@ -1,0 +1,223 @@
+package com.embel.asset.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+
+@Entity
+@Table(name = "user_details")
+public class UserDetail {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long pkuserId;
+	
+	@Column(name ="username")
+	private String username;
+	
+	@Column(name ="user_role")
+	private String role;
+	
+	@Column(name ="first_name")
+	private String firstName;
+	
+	@Column(name ="last_name")
+	private String lastName;
+	
+	@Column(name ="phone_number")
+	private Long phoneNumber;
+	
+	@Column(name = "e_mail_id")
+	private String emailId;
+	
+	@Column(name ="password")
+	private String password;
+
+	@Column(name ="company_name")
+	private String companyName;
+	
+	@Column(name = "user_address")
+	private String address;
+	
+	@Column(name = "reset_password_token")
+	private String resetPasswordToken;
+
+	@Column(name = "access_token")
+	private String accessToken;
+
+	@Column(name = "refresh_token")
+	private String refreshToken;
+	
+	@Column(name = "organization")
+	private String organization;
+	
+	@Column(name = "user")
+	private String user;
+	
+	@Column(name = "admin")
+	private String admin;
+	
+	private String createdby;
+	
+	@Column(name = "category")
+	private String category;
+	@Column(name = "status")
+	private String status;
+	public UserDetail() {
+		super();
+	}
+	public UserDetail(Long pkuserId, String username, String role, String firstName, String lastName, Long phoneNumber,
+			String emailId, String password, String companyName, String address, String resetPasswordToken,
+			String accessToken, String refreshToken, String organization, String user, String admin, String createdby,
+			String category, String status) {
+		super();
+		this.pkuserId = pkuserId;
+		this.username = username;
+		this.role = role;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.phoneNumber = phoneNumber;
+		this.emailId = emailId;
+		this.password = password;
+		this.companyName = companyName;
+		this.address = address;
+		this.resetPasswordToken = resetPasswordToken;
+		this.accessToken = accessToken;
+		this.refreshToken = refreshToken;
+		this.organization = organization;
+		this.user = user;
+		this.admin = admin;
+		this.createdby = createdby;
+		this.category = category;
+		this.status = status;
+	}
+	public Long getPkuserId() {
+		return pkuserId;
+	}
+	public void setPkuserId(Long pkuserId) {
+		this.pkuserId = pkuserId;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public Long getPhoneNumber() {
+		return phoneNumber;
+	}
+	public void setPhoneNumber(Long phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+	public String getEmailId() {
+		return emailId;
+	}
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getCompanyName() {
+		return companyName;
+	}
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getResetPasswordToken() {
+		return resetPasswordToken;
+	}
+	public void setResetPasswordToken(String resetPasswordToken) {
+		this.resetPasswordToken = resetPasswordToken;
+	}
+	public String getAccessToken() {
+		return accessToken;
+	}
+	public void setAccessToken(String accessToken) {
+		this.accessToken = accessToken;
+	}
+	public String getRefreshToken() {
+		return refreshToken;
+	}
+	public void setRefreshToken(String refreshToken) {
+		this.refreshToken = refreshToken;
+	}
+	public String getOrganization() {
+		return organization;
+	}
+	public void setOrganization(String organization) {
+		this.organization = organization;
+	}
+	public String getUser() {
+		return user;
+	}
+	public void setUser(String user) {
+		this.user = user;
+	}
+	public String getAdmin() {
+		return admin;
+	}
+	public void setAdmin(String admin) {
+		this.admin = admin;
+	}
+	public String getCreatedby() {
+		return createdby;
+	}
+	public void setCreatedby(String createdby) {
+		this.createdby = createdby;
+	}
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	@Override
+	public String toString() {
+		return "UserDetail [pkuserId=" + pkuserId + ", username=" + username + ", role=" + role + ", firstName="
+				+ firstName + ", lastName=" + lastName + ", phoneNumber=" + phoneNumber + ", emailId=" + emailId
+				+ ", password=" + password + ", companyName=" + companyName + ", address=" + address
+				+ ", resetPasswordToken=" + resetPasswordToken + ", accessToken=" + accessToken + ", refreshToken="
+				+ refreshToken + ", organization=" + organization + ", user=" + user + ", admin=" + admin
+				+ ", createdby=" + createdby + ", category=" + category + ", status=" + status + "]";
+	}
+	
+	
+}
